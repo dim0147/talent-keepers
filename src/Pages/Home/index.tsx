@@ -1,5 +1,7 @@
+import { FirstSection } from '../components/FirstSection.tsx';
+
 function Home() {
-  return <div>Home</div>;
+  return <FirstSection />;
 }
 
 export default Home;
