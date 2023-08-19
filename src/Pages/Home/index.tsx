@@ -1,4 +1,4 @@
-import { FirstSection } from '../components/FirstSection.tsx';
+import { FirstSection } from '../components/FirstSection';
 
 function Home() {
   return <FirstSection />;
