@@ -1,22 +1,17 @@
-import { BigText } from './components/BigText.tsx';
+import { LeftSide } from './components/LeftSide';
+import { RightSide } from './components/RightSide';
+import { useEffect } from 'react';
+import { firstSectionTimeLine } from '../../../Global/gsap.ts';
 
 export function FirstSection() {
-  const lightColor = 'rgba(0,0,0,.3)';
+  useEffect(() => {
+    firstSectionTimeLine.play();
+  }, []);
 
   return (
-    <div className="p-5">
-      <div className="flex-initial">
-        <BigText
-          text={
-            <>
-              <span style={{ color: lightColor }}>Creative</span> Design
-            </>
-          }
-        />
-        <BigText text="& Development" />
-        <BigText text={<span style={{ color: lightColor }}>Agency</span>} />
-      </div>
-      {/*<div />*/}
+    <div className="p-5 flex">
+      <LeftSide />
+      <RightSide />
     </div>
   );
 }

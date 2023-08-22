@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { firstSectionTimeLine } from '../../../../../../Global/gsap.ts';
+import { ANIMATION_DURATION, TIMELINE_LABEL } from '../../../../../../Constants/gsap.ts';
 
 interface BigTextProps {
   text: React.ReactElement | string;
@@ -10,15 +11,16 @@ export function BigText({ text }: BigTextProps) {
 
   useEffect(() => {
     // Text appear from bottom
-    gsap.fromTo(
+    firstSectionTimeLine.fromTo(
       textRef.current,
       {
         yPercent: 100,
       },
       {
         yPercent: 0,
-        duration: 0.6,
-      }
+        duration: ANIMATION_DURATION,
+      },
+      TIMELINE_LABEL.FIRST_SECTION.LEFT_SIDE
     );
   }, []);
 
