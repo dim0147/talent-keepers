@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { firstSectionTimeLine } from '../../../../../../Global/gsap.ts';
-import { ANIMATION_DURATION, TIMELINE_LABEL } from '../../../../../../Constants/gsap.ts';
+import { mainTimeLine } from '../../../../../../Global/gsap.ts';
+import {
+  ANIMATION_DURATION,
+  TIMELINE_LABEL,
+} from '../../../../../../Constants/gsap.ts';
 
 interface BigTextProps {
   text: React.ReactElement | string;
@@ -11,7 +14,7 @@ export function BigText({ text }: BigTextProps) {
 
   useEffect(() => {
     // Text appear from bottom
-    firstSectionTimeLine.fromTo(
+    mainTimeLine.fromTo(
       textRef.current,
       {
         yPercent: 100,
