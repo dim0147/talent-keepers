@@ -1,5 +1,7 @@
 import GoodFaceImg from '../../../Assets/images/good-faces.jpg';
 import { useEffect } from 'react';
+import { Parallax } from 'react-parallax';
+
 import { gsap } from 'gsap';
 import { ANIMATION_DURATION_SECOND_SECTION_IMG } from '../../../Constants/gsap.ts';
 
@@ -53,7 +55,10 @@ export function SecondSection() {
         <p className="ss-text"> and virtual reality</p>
       </div>
       <div className="flex-1">
-        <img className="ss-img w-[35vw]" src={GoodFaceImg} />
+        <Parallax className="ss-img" bgImage={GoodFaceImg} strength={250}>
+          {/* Make Parallax get the height of the image */}
+          <img className="w-[35vw] invisible" src={GoodFaceImg} />
+        </Parallax>
       </div>
     </div>
   );

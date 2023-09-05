@@ -4,6 +4,7 @@ import {
   ANIMATION_DURATION_SECOND_SECTION_IMG,
   TIMELINE_LABEL,
 } from './Constants/gsap.ts';
+import Lenis from '@studio-freight/lenis';
 
 function setupFirstSection() {
   // First section
@@ -26,6 +27,18 @@ function setupFirstSection() {
   );
 }
 
+function setupSmotthScroll() {
+  const lenis = new Lenis();
+
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}
+
 export function init() {
+  setupSmotthScroll();
   setupFirstSection();
 }
