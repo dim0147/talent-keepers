@@ -1,11 +1,19 @@
 import GoodFaceImg from '../../../Assets/images/good-faces.jpg';
 import { useEffect } from 'react';
-import { TIMELINE_LABEL } from '../../../Constants/gsap.ts';
-import { mainTimeLine } from '../../../Global/gsap.ts';
+import { gsap } from 'gsap';
+import { ANIMATION_DURATION_SECOND_SECTION_IMG } from '../../../Constants/gsap.ts';
 
 export function SecondSection() {
   useEffect(() => {
-    mainTimeLine
+    const secondSectionTimeLine = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#second-section',
+        markers: true,
+        start: '100px center',
+      },
+    });
+
+    secondSectionTimeLine
       // Text
       .fromTo(
         '.ss-text',
@@ -17,26 +25,25 @@ export function SecondSection() {
           yPercent: 0,
           opacity: 1,
           stagger: 0.2,
-        },
-        TIMELINE_LABEL.SECOND_SECTION.TEXT
-      )
-      // Image
-      .fromTo(
-        '.ss-img',
-        {
-          opacity: 0,
-          filter: 'blur(3.125rem)',
-        },
-        {
-          opacity: 1,
-          filter: 'blur(0px)',
-        },
-        TIMELINE_LABEL.SECOND_SECTION.IMAGE
+        }
       );
+
+    secondSectionTimeLine.fromTo(
+      '.ss-img',
+      {
+        opacity: 0,
+        clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
+      },
+      {
+        opacity: 1,
+        clipPath: 'polygon(0 0, 75% 0, 100% 100%, 25% 100%)',
+        duration: ANIMATION_DURATION_SECOND_SECTION_IMG,
+      }
+    );
   }, []);
 
   return (
-    <div className="mt-[10vh] flex">
+    <div id="second-section" className="mt-[10vh] flex">
       <div className="flex-1 pl-[10vw] pt-[10vh] text-[1.5vw] font-medium">
         <p className="ss-text">We work with latest technologies</p>
         <p className="ss-text">using an efficient digital work flows</p>
@@ -46,13 +53,7 @@ export function SecondSection() {
         <p className="ss-text"> and virtual reality</p>
       </div>
       <div className="flex-1">
-        <img
-          className="ss-img w-[35vw]"
-          style={{
-            clipPath: 'polygon(0 0%, 75% 0, 100% 100%, 25% 100%)',
-          }}
-          src={GoodFaceImg}
-        />
+        <img className="ss-img w-[35vw]" src={GoodFaceImg} />
       </div>
     </div>
   );

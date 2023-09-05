@@ -1,5 +1,9 @@
 import { mainTimeLine } from './Global/gsap.ts';
-import { ANIMATION_DURATION, TIMELINE_LABEL } from './Constants/gsap.ts';
+import {
+  ANIMATION_DURATION,
+  ANIMATION_DURATION_SECOND_SECTION_IMG,
+  TIMELINE_LABEL,
+} from './Constants/gsap.ts';
 
 function setupFirstSection() {
   // First section
@@ -16,7 +20,9 @@ function setupFirstSection() {
   );
   mainTimeLine.add(
     TIMELINE_LABEL.SECOND_SECTION.IMAGE,
-    `${TIMELINE_LABEL.SECOND_SECTION.TEXT}+=${ANIMATION_DURATION + 0.5}`
+    `${TIMELINE_LABEL.SECOND_SECTION.TEXT}+=${
+      ANIMATION_DURATION_SECOND_SECTION_IMG + 0.5
+    }`
   );
 }
 

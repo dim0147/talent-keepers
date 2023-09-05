@@ -10,3 +10,5 @@ export const TIMELINE_LABEL = {
 };
 
 export const ANIMATION_DURATION = 0.5;
+
+export const ANIMATION_DURATION_SECOND_SECTION_IMG = 1;
