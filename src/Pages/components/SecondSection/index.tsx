@@ -10,7 +10,6 @@ export function SecondSection() {
     const secondSectionTimeLine = gsap.timeline({
       scrollTrigger: {
         trigger: '#second-section',
-        markers: true,
         start: '100px center',
       },
     });
@@ -52,7 +51,7 @@ export function SecondSection() {
         <p className="ss-text">
           based on bim parametric modelling data analysis
         </p>
-        <p className="ss-text"> and virtual reality</p>
+        <p className="ss-text"> and virtual reality.</p>
       </div>
       <div className="flex-1">
         <Parallax className="ss-img" bgImage={GoodFaceImg} strength={250}>
