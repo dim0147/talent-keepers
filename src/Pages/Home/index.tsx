@@ -3,6 +3,7 @@ import { SecondSection } from '../components/SecondSection';
 import { useEffect } from 'react';
 import { mainTimeLine } from '../../Global/gsap.ts';
 import { ThirdSection } from '../components/ThirdSection';
+import { FourthSection } from '../components/FourthSection';
 
 function Home() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function Home() {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
+        <FourthSection />
       </div>
     </div>
   );
