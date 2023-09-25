@@ -15,7 +15,7 @@ export function FourthSection() {
           start: '-100px center',
         },
       })
-      .to('#forth-section-title', { opacity: 1 })
+      .to('#forth-section-title', { opacity: 1, duration: 1 })
       .to('#forth-section-container', { opacity: 1, duration: 1 });
   }, []);
 
@@ -43,7 +43,7 @@ export function FourthSection() {
         id="forth-section-title"
         className="text-center text-[3vw] opacity-0"
       >
-        Gallery
+        Inspiration
       </div>
       <div
         id="forth-section-container"
