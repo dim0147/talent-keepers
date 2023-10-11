@@ -90,6 +90,31 @@ export function FirthSection() {
 function Card({ title, content }: CardProps) {
   const divRef = useRef();
 
+  useEffect(() => {
+    const dom = divRef.current;
+    if (!dom) {
+      return;
+    }
+
+    gsap.fromTo(
+      dom,
+      {
+        yPercent: 100,
+        opacity: 0,
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: dom,
+          start: '-=550px +=400px',
+          // markers: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <div ref={divRef} className="firth-section-card relative z-3 max-w-sm">
       <h4 className="text-6xl">{title}</h4>
