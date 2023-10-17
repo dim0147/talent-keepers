@@ -5,6 +5,7 @@ import { mainTimeLine } from '../../Global/gsap.ts';
 import { ThirdSection } from '../components/ThirdSection';
 import { FourthSection } from '../components/FourthSection';
 import { FirthSection } from '../components/FirthSection';
+import { Footer } from '../components/Footer';
 
 function Home() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function Home() {
         <ThirdSection />
         <FourthSection />
         <FirthSection />
+        <Footer />
       </div>
     </div>
   );

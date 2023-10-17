@@ -88,7 +88,7 @@ export function FirthSection() {
 }
 
 function Card({ title, content }: CardProps) {
-  const divRef = useRef();
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const dom = divRef.current;
